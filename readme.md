@@ -1,6 +1,6 @@
-##Cowboy Bebop Card Generator
+## Cowboy Bebop Card Generator
 
-A relatively simple Cowboy Bebop ending card generator using python's pillow library. Supports custom image size and multiline text input.
+A relatively simple Cowboy Bebop end card generator using python's pillow library. Supports custom image size and multiline text input.
 
 I didn't stress test it that hard so it's not so robust... pls don't try to break it or do weird html injection... o(╥﹏╥)o♡
 

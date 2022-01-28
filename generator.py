@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from PIL import Image, ImageDraw, ImageFont
-import textwrap
 
 DIM_4K = (3840, 2160)
 DIM_STANDARD_1 = (1920, 1080)

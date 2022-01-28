@@ -6,7 +6,6 @@ DIM_STANDARD_2 = (1280, 720)
 
 from generator import draw_card
 from flask import Flask, render_template, request, send_file
-import requests
 from io import BytesIO
 
 app = Flask(__name__)
