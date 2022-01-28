@@ -13,9 +13,10 @@ app = Flask(__name__)
 
 def serve_pil_image(pil_img):
     img_io = BytesIO()
-    pil_img.save(img_io, 'JPEG', quality=70)
+    pil_img.save(img_io, 'JPEG', quality=80)
     img_io.seek(0)
     return send_file(img_io, mimetype='image/jpeg')
+
 
 @app.route("/")
 def hello():
@@ -24,7 +25,7 @@ def hello():
 
 @app.route("/card", methods=["POST"])
 def render_card():
-    text = request.form["cardText"].upper()
+    text = request.form["cardText"]
     w = int(request.form["cardWidth"])
     h = int(request.form["cardHeight"])
     card = draw_card(w, h, text)
@@ -34,12 +35,5 @@ def render_card():
 
 if __name__ == "__main__":
     app.run()
-    # # Get user inputs
-    # width = int(input("Image width: "))
-    # height = int(input("Image height: "))
-    # text = input("Image text: ").upper()
-    #
-    # img = draw_card(width, height, text)
-    # img.save("test.png", "PNG")
 
 
