@@ -5,20 +5,41 @@ DIM_STANDARD_1 = (1920, 1080)
 DIM_STANDARD_2 = (1280, 720)
 
 from generator import draw_card
-from fastapi import FastAPI
+from flask import Flask, render_template, request, send_file
+import requests
+from io import BytesIO
 
-app = FastAPI()
+app = Flask(__name__)
 
-@app.get("/")
-async def root():
-    return {"message": "Hello world"}
+def serve_pil_image(pil_img):
+    img_io = BytesIO()
+    pil_img.save(img_io, 'JPEG', quality=70)
+    img_io.seek(0)
+    return send_file(img_io, mimetype='image/jpeg')
+
+@app.route("/")
+def hello():
+    return render_template("home.html")
+
+
+@app.route("/card", methods=["POST"])
+def render_card():
+    text = request.form["cardText"].upper()
+    w = int(request.form["cardWidth"])
+    h = int(request.form["cardHeight"])
+    card = draw_card(w, h, text)
+
+    return serve_pil_image(card)
+
 
 if __name__ == "__main__":
-    # Get user inputs
-    width = int(input("Image width: "))
-    height = int(input("Image height: "))
-    text = input("Image text: ").upper()
+    app.run()
+    # # Get user inputs
+    # width = int(input("Image width: "))
+    # height = int(input("Image height: "))
+    # text = input("Image text: ").upper()
+    #
+    # img = draw_card(width, height, text)
+    # img.save("test.png", "PNG")
 
-    img = draw_card(width, height, text)
-    img.save("test.png", "PNG")
 

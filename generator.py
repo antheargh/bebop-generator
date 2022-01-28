@@ -25,7 +25,7 @@ def draw_card(w, h, line):
     x = w - line_w - char_w
     draw.text((x, y), line, fill='white', font=font)
 
-    img.show()
+    # img.show()
     return img
 
 
