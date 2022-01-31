@@ -1,9 +1,9 @@
-charset-normalizer==2.0.10
-click==8.0.3
-Flask==2.0.2
-itsdangerous==2.0.1
-Jinja2==3.0.3
-MarkupSafe==2.0.1
+certifi==2021.10.8
+charset-normalizer==2.0.7
+gunicorn==20.0.4
+idna==3.3
+numpy==1.21.2
 Pillow==9.0.0
-urllib3==1.26.8
-Werkzeug==2.0.2
+requests==2.26.0
+tqdm==4.62.3
+urllib3==1.26.7
