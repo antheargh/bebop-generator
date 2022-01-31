@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
-from PIL import Image, ImageDraw, ImageFont
-
-DIM_4K = (3840, 2160)
-DIM_STANDARD_1 = (1920, 1080)
-DIM_STANDARD_2 = (1280, 720)
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 
 def draw_card(w, h, text):
@@ -36,7 +32,8 @@ def draw_card(w, h, text):
         # Next line
         y += line_h
 
-    # img.show()
+    # Slight gaussian blur for ViNtAgE aesthetic
+    img = img.filter(ImageFilter.GaussianBlur(radius=font_size/55))
     return img
 
 

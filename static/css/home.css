@@ -1,0 +1,15 @@
+* {
+    background-color: #101010;
+    color: #fff;
+    border-color: #696969;
+}
+
+body {
+    font-family: "Ubuntu Mono", monospace;
+    text-align: center;
+}
+
+.credit {
+    font-size: 10px;
+    color: #696969;
+}

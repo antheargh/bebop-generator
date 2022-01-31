@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Form Test</title>
+    <title>Cowboy Bebop End Card Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/home.css') }}">
 </head>
 <body>
-<h2>Cowboy Bebop Ending Card Generator</h2>
+<h2>Cowboy Bebop End Card Generator</h2>
 <form id="cardForm" action="/card" method="post">
-    Text:<br> <textarea name="cardText"></textarea><br>
-    Width: <input type="number" name="cardWidth" value="1920" required><br>
-    Height: <input type="number" name="cardHeight" value="1080" required><br>
+    Width: <input type="number" name="cardWidth" value="1920" required min="200" max="10000" size="5">
+    Height: <input type="number" name="cardHeight" value="1080" required min="200" max="10000" size="5"><br>
+    <br>
+    Text:<br> <textarea name="cardText" required></textarea><br> <br>
     <input id="cardSubmit" type="submit" value="Submit">
 </form>
+<br>
+<div class="credit">Written by <a href="https://nthea.xyz">@nthea</a></div>
 </body>
 </html>
