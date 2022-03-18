@@ -6,6 +6,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 def draw_card(w, h, text):
     # Parse text
     lines = text.split("\r\n")
+    # Get rid of blank trailing lines (if any)
+    while lines[-1] == "":
+        lines.pop()
     n = len(lines)
 
     # Load base (black) image

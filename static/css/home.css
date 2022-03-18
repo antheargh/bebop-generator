@@ -4,6 +4,10 @@
     border-color: #696969;
 }
 
+a {
+    color: #969696;
+    }
+
 body {
     font-family: "Ubuntu Mono", monospace;
     text-align: center;
