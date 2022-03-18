@@ -1,6 +1,8 @@
 ## Cowboy Bebop Card Generator
 
-A relatively simple Cowboy Bebop end card generator using python's pillow library. Supports custom image size and multiline text input.
+A relatively simple Cowboy Bebop end card generator using python's pillow library. Supports custom image size and multiline text input. Deployed on heroku using the flask framework:
+
+[https://bebop-generator.herokuapp.com](https://bebop-generator.herokuapp.com)
 
 I didn't stress test it that hard so it's not so robust... pls don't try to break it or do weird html injection... o(╥﹏╥)o♡
 
