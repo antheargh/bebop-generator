@@ -22,7 +22,7 @@ def hello():
     return render_template("home.html")
 
 
-@app.route("/card", methods=['GET', s"POST"])
+@app.route("/card", methods=["GET", "POST"])
 def render_card():
     text = request.form["cardText"]
     w = int(request.form["cardWidth"])
